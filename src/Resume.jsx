@@ -119,7 +119,7 @@ class Resume extends Component {
           <div className="content-innertube">
             <Header menuItems={menuItems} />
             
-            <div id="text"><img src="img/resume.png" alt="" title="" /></div>
+            <div id="text"><img src={require('./img/resume.png')} alt="" title="" /></div>
             <div id="stripe"></div>
           
             <div id="content-left">

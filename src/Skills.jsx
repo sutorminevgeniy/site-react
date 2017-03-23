@@ -7,9 +7,9 @@ class Stars extends Component {
     
     for(i = 0; i < 6; i++){
       if(i < this.props.stars) {
-        imgSrc.push('img/star-active.png')
+        imgSrc.push(require('./img/star-active.png'))
       } else {
-        imgSrc.push('img/star-inactive.png')
+        imgSrc.push(require('./img/star-inactive.png'))
       }
     }
 

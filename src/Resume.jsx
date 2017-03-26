@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import './css/style.scss';
 
-import Header from './Header';
-import Footer from './Footer';
-import Skills from './Skills';
-import Experience from './Experience';
-import PersonalDetails from './PersonalDetails';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import PersonalDetails from './components/PersonalDetails';
 
 const menuItems = [
   {

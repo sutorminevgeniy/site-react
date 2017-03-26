@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import ReactDOM from 'react-dom';
 // import { Switch, Router, Route } from 'react-router'
 import { Route, Router, browserHistory } from 'react-router'
@@ -6,6 +7,9 @@ import { Route, Router, browserHistory } from 'react-router'
 import './css/style.scss';
 
 import Resume from './Resume';
+import Portfolio from './Portfolio';
+import Project from './Project';
+import About from './About';
 import Contact from './Contact';
 
 class NotFound extends Component{
@@ -27,6 +31,9 @@ class NotFound extends Component{
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={Resume} />
+        <Route path="portfolio" component={Portfolio} />
+        <Route path="project" component={Project} />
+        <Route path="about" component={About} />
         <Route path="contact" component={Contact} />
         <Route path="*" component={NotFound} />
     </Router>,

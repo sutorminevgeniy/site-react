@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 
 import './css/style.scss';
 
-import Header from './Header';
-import Footer from './Footer';
-import Skills from './Skills';
-import Experience from './Experience';
-import PersonalDetails from './PersonalDetails';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const menuItems = [
   {
@@ -40,7 +37,7 @@ class Contact extends Component {
           <div className="content-innertube">
             <Header menuItems={menuItems} />
             
-            <div id="text"><img src={require('./img/resume.png')} alt="" title="" /></div>
+            <div id="text"><img src={require('./img/contact.png')} alt="" title="" /></div>
             <div id="stripe"></div>
           
             <ul id="contact-columns" className="clearfix">

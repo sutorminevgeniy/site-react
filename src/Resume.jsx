@@ -1,35 +1,9 @@
 import React, { Component } from 'react';
 
-import './css/style.scss';
-
-import Header from './components/Header';
-import Footer from './components/Footer';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import PersonalDetails from './components/PersonalDetails';
 
-const menuItems = [
-  {
-    link: "/",
-    label: "Resume"
-  },
-  {
-    link: "/portfolio",
-    label: "Portfolio"
-  },
-  {
-    link: "/project",
-    label: "Project"
-  },
-  {
-    link: "/about",
-    label: "About me"
-  },
-  {
-    link: "/contact",
-    label: "Contact"
-  }
-];
 const skills = {
   title: "Technical Skills",
   items: [
@@ -111,35 +85,23 @@ const personalDetails = {
   ]
 };
 
-class Resume extends Component {
+export default class Resume extends Component {
   render() {
     return (
-      <div id="page-shadow">
-        <div id="page">
-          <div className="content-innertube">
-            <Header menuItems={menuItems} />
-            
-            <div id="text"><img src={require('./img/resume.png')} alt="" title="" /></div>
-            <div id="stripe"></div>
-          
-            <div id="content-left">
-              <PersonalDetails data={personalDetails}/> 
-              <Experience data={workExperience} />
-            </div>
-            
-            <div id="content-right">
-              <Skills data={skills} />
-              <Experience data={education} />
-            </div>
-          </div>
-          
-          <div className="clear"></div>
-          
-          <Footer menuItems={menuItems} />
+      <div id="contet-pages">
+        <div id="text"><img src={require('./img/resume.png')} alt="" title="" /></div>
+        <div id="stripe"></div>
+      
+        <div id="content-left">
+          <PersonalDetails data={personalDetails}/> 
+          <Experience data={workExperience} />
+        </div>
+        
+        <div id="content-right">
+          <Skills data={skills} />
+          <Experience data={education} />
         </div>
       </div>
     );
   }
-}
-
-export default Resume;
+};

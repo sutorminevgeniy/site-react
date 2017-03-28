@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
+import { Route, Router, Link, IndexLink } from 'react-router'
 
-class Menu extends Component {
+export default class Menu extends Component {
   render() {
-    let pathName = location.pathname;
-    console.log(pathName);
-
     return (
       <ul id={this.props.menuId}>
-        {this.props.menuItems.map((item, index) => {
-          let classCurrent = (item.link == pathName ? 'current' : '');
+        <li><IndexLink to={this.props.menuItems.main.link} activeClassName="current">{this.props.menuItems.main.label}</IndexLink></li>
+        {this.props.menuItems.pages.map((item, index) => {
           return (
-            <li key={index} className={classCurrent}><a href={item.link}>{item.label}</a></li>
+            <li key={index}><Link to={item.link} activeClassName="current">{item.label}</Link></li>
           );
         })}
       </ul>
     )
   }
-}
-
-export default Menu;
+};

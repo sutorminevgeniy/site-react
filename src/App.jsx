@@ -61,11 +61,24 @@ class Main extends React.Component{
   }
 }
 
+class PortfolioMain extends React.Component{
+  render(){
+    return (
+      <div>
+        {this.props.children}         
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Resume} />
-      <Route path="portfolio" component={Portfolio} />
+      <Route path="portfolio" component={PortfolioMain}>
+        <IndexRoute component={Portfolio} />
+        <Route path=":name" component={Project} />
+      </Route>
       <Route path="project" component={Project} />
       <Route path="about" component={About} />
       <Route path="contact" component={Contact} />

@@ -30,7 +30,7 @@ module.exports = {
         test: /\.svg$|\.png|\.jpe?g|\.gif$/,
         loader: 'file-loader',
         query: {
-            name: 'img/[name].[ext]'
+            name: '/img/[name].[ext]'
         }
       }
 ]

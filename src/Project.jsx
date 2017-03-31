@@ -7,7 +7,7 @@ export default class Project extends Component {
         <div id="text"><img src={require('./img/project.png')} alt="" title="" /></div>
         <div id="stripe"></div>
         
-        <h2>Ford Mustang and a beautiful girl</h2>
+        <h2>Ford Mustang and a beautiful girl {this.props.params.name}</h2>
         
         <ul id="project-nav">
           <li className="online"><a href="#"></a></li>

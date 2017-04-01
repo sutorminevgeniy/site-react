@@ -24,10 +24,6 @@ const menuItems = {
       label: "Portfolio"
     },
     {
-      link: "/project",
-      label: "Project"
-    },
-    {
       link: "/about",
       label: "About me"
     },
@@ -79,7 +75,6 @@ ReactDOM.render(
         <IndexRoute component={Portfolio} />
         <Route path=":name" component={Project} />
       </Route>
-      <Route path="project" component={Project} />
       <Route path="about" component={About} />
       <Route path="contact" component={Contact} />
       <Route path="*" component={NotFound} />

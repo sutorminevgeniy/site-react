@@ -306,7 +306,7 @@ export default class Portfolio extends Component {
     let result = {page: 1};
 
     result.tag = e.currentTarget.getAttribute('data-value'); 
-this.setState(result);
+
     if(result.tag === 'All'){
       result.portfolio = portfolio;
     } else {

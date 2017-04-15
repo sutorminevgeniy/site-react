@@ -1,7 +1,3 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Route, Router, Link, IndexLink } from 'react-router'
-
 const portfolio = [
   {
     dataId: 'id-1',
@@ -285,122 +281,19 @@ const portfolio = [
   }
 ];
 
-
-class Portfolio extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: 1,
-      countProjects: 10,
-      tag: 'All',
-      portfolio: props.portfolio
-    };
-
-    this.nextPage = this.nextPage.bind(this);
-    this.prevPage = this.prevPage.bind(this);
-    this.setProjectsByTag = this.setProjectsByTag.bind(this);
-  }
-
-  setProjectsByTag(e) {
-    e.preventDefault();
-    let result = {page: 1};
-
-    result.tag = e.currentTarget.getAttribute('data-value'); 
-
-    if(result.tag === 'All'){
-      result.portfolio = this.props.portfolio;
-    } else {
-      result.portfolio = this.props.portfolio.filter(function(item) {
-        return (item.tag === result.tag);
-      });
-    }
-
-    this.setState(result);
-  }
-
-  getTags() {
-    let result = {};
-    let tags = [];
-    result.All = this.props.portfolio.length;
-    this.props.portfolio.map((item) => {
-      if(item.tag in result) {
-        result[item.tag]++;
-      } else {
-        result[item.tag] = 1;
-      }
-    });
-
-    for(let key in result) {
-      let className = (this.state.tag === key ? "segment selected" : "segment");
-      tags.push(<li key={key} className={className}><a href="#" data-value={key} onClick={this.setProjectsByTag}><span>{result[key]}</span>{key}</a></li>);
-    }
-
-    return tags;
-  }
-
-  nextPage(e) {
-    e.preventDefault();
-    let newPage = this.state.page;
-    if(this.state.page < Math.floor(this.state.portfolio.length / this.state.countProjects)){
-      newPage++;
-    } else {
-      newPage = 1;
-    }
-    this.setState({page: newPage});
-  }
-
-  prevPage(e) {
-    e.preventDefault();
-    let newPage = this.state.page;
-    if(this.state.page > 1){
-      newPage--;
-    } else {
-      newPage = Math.floor(this.state.portfolio.length / this.state.countProjects);
-    }
-    this.setState({page: newPage});
-  }
-
-  render() {
-    let pageStart = (this.state.page - 1) * this.state.countProjects;
-    let pageEnd = this.state.page * this.state.countProjects;
-    let tags = this.getTags();
-    console.log(this.state);
-
-    return (
-      <div id="contet-pages">
-        <div id="text"><img src={require('./img/portfolio.png')} alt="" title="" /></div>
-        <div id="stripe"></div>
-        
-        <ul className="portfolio-nav clearfix">
-          { tags }
-        </ul>
-        
-        <ul id="list" className="portfolio clearfix">
-          { this.state.portfolio.slice(pageStart, pageEnd).map((item, key) => {
-            return (
-              <li key={key} data-id={item.dataId} className="ford">
-                <Link to={`/portfolio/${item.dataId}`} rel="prettyPhoto[mixed]" title={item.dataId}>
-                  <img title="" alt="" src={require('' + item.image.src)} />
-                  <span className="portfolio-overlay"><br />{item.dataId}<br />{item.tag}</span>
-                </Link>
-              </li>
-             );
-          }) }   
-        </ul>
-        
-        <ul id="prev-next" className="clearfix">
-          <li className="next"><a href="#" onClick={this.nextPage}></a></li>
-          <li className="prev"><a href="#" onClick={this.prevPage}></a></li>
-        </ul>
-      </div>
-    );
-  }
+const initialState = {
+  portfolio: portfolio
 };
 
-const mapStateToProps = function(store) {
-  return {
-    portfolio: store.portfolioState.portfolio
-  };
-};
+const portfolioReducer = function(state = initialState, action) {
 
-export default connect(mapStateToProps)(Portfolio);
+  switch(action.type) {
+
+    case 'NEXT_PAGE':
+      return state;
+  }
+
+  return state;
+}
+
+export default portfolioReducer;

@@ -1,3 +1,4 @@
+
 const portfolio = [
   {
     dataId: 'id-1',
@@ -281,13 +282,55 @@ const portfolio = [
   }
 ];
 
-const initialState = {
-  portfolio: portfolio
+let portfolioByTag = portfolio;
+
+let initialState = {
+  page: 1,
+  countProjects: 10,
+  tag: 'All',
+  portfolio: portfolioByTag
 };
+
+initialState.portfolio = portfolioByTag.slice(0, initialState.countProjects);
+
+const getTags = function () {
+  let result = {};
+
+  result.All = portfolio.length;
+
+  portfolio.map((item) => {
+    if(item.tag in result) {
+      result[item.tag]++;
+    } else {
+      result[item.tag] = 1;
+    }
+  });
+
+  return result;
+}
+
+initialState.tags = getTags();
 
 const portfolioReducer = function(state = initialState, action) {
 
   switch(action.type) {
+    case 'GET_PROJECTS_BY_TAG':
+      let newState = Object.assign({}, state);
+
+      if(action.tag === 'All'){
+        portfolioByTag = portfolio;
+      } else {
+        portfolioByTag = portfolio.filter(function(item) {
+          return (item.tag === action.tag);
+        });
+      }
+
+      newState.page = 1;
+      newState.tag =action.tag;
+      newState.portfolio = portfolioByTag.slice(0, newState.countProjects);
+      console.log(newState);
+
+      return newState;
 
     case 'NEXT_PAGE':
       return state;

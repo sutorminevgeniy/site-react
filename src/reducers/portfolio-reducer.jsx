@@ -312,11 +312,10 @@ const getTags = function () {
 initialState.tags = getTags();
 
 const portfolioReducer = function(state = initialState, action) {
+  let newState = Object.assign({}, state);
 
   switch(action.type) {
     case 'GET_PROJECTS_BY_TAG':
-      let newState = Object.assign({}, state);
-
       if(action.tag === 'All'){
         portfolioByTag = portfolio;
       } else {
@@ -328,12 +327,38 @@ const portfolioReducer = function(state = initialState, action) {
       newState.page = 1;
       newState.tag =action.tag;
       newState.portfolio = portfolioByTag.slice(0, newState.countProjects);
-      console.log(newState);
 
       return newState;
 
     case 'NEXT_PAGE':
-      return state;
+      let startProject;
+
+      newState.page = state.page;
+
+      if(newState.page < Math.ceil(portfolioByTag.length / newState.countProjects)){
+        newState.page++;
+      } else {
+        newState.page = 1;
+      }
+
+      startProject = (newState.page - 1) * newState.countProjects
+      newState.portfolio = portfolioByTag.slice(startProject , startProject + newState.countProjects);
+
+      return newState;
+
+    case 'PREV_PAGE':
+      newState.page = state.page;
+
+      if(newState.page > 1){
+        newState.page--;
+      } else {
+        newState.page = Math.ceil(portfolioByTag.length / newState.countProjects);
+      }
+      
+      startProject = (newState.page - 1) * newState.countProjects
+      newState.portfolio = portfolioByTag.slice(startProject , startProject + newState.countProjects);
+
+      return newState;
   }
 
   return state;

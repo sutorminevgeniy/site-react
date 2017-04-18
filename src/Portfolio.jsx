@@ -42,24 +42,18 @@ class Portfolio extends Component {
 
   nextPage(e) {
     e.preventDefault();
-    let newPage = this.state.page;
-    if(this.state.page < Math.floor(this.state.portfolio.length / this.state.countProjects)){
-      newPage++;
-    } else {
-      newPage = 1;
-    }
-    this.setState({page: newPage});
+
+    store.dispatch({
+      type: 'NEXT_PAGE'
+    });
   }
 
   prevPage(e) {
     e.preventDefault();
-    let newPage = this.state.page;
-    if(this.state.page > 1){
-      newPage--;
-    } else {
-      newPage = Math.floor(this.state.portfolio.length / this.state.countProjects);
-    }
-    this.setState({page: newPage});
+    
+    store.dispatch({
+      type: 'PREV_PAGE'
+    });
   }
 
   render() {

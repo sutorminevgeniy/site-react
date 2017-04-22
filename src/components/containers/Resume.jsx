@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import PersonalDetails from './components/PersonalDetails';
+import Skills from '../views/Skills';
+import Experience from '../views/Experience';
+import PersonalDetails from '../views/PersonalDetails';
 
 const skills = {
   title: "Technical Skills",
@@ -89,7 +89,7 @@ export default class Resume extends Component {
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('./img/resume.png')} alt="" title="" /></div>
+        <div id="text"><img src={require('../../img/resume.png')} alt="" title="" /></div>
         <div id="stripe"></div>
       
         <div id="content-left">

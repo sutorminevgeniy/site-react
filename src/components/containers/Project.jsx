@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import store from '../../store';
 
-export default class Project extends Component {
+
+class Project extends Component {
+  componentDidMount() {
+    store.dispatch({
+      type: 'GET_PROJECT_BY_ID',
+      id: this.props.params.id
+    });
+  }
+
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('./img/project.png')} alt="" title="" /></div>
+        <div id="text"><img src={require('../../img/project.png')} alt="" title="" /></div>
         <div id="stripe"></div>
         
-        <h2>Ford Mustang and a beautiful girl {this.props.params.name}</h2>
+        <h2>{this.props.projectState.tag} {this.props.projectState.id}</h2>
         
         <ul id="project-nav">
           <li className="online"><a href="#"></a></li>
@@ -20,31 +30,31 @@ export default class Project extends Component {
         
           <li>
             <a href="img/sample/portfolio-big1.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('./img/sample/portfolio-min1.jpg')} />
+              <img title="" alt="" src={require('../../img/sample/portfolio-min1.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
             <a href="img/sample/portfolio-big2.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('./img/sample/portfolio-min2.jpg')} />
+              <img title="" alt="" src={require('../../img/sample/portfolio-min2.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
             <a href="img/sample/portfolio-big3.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('./img/sample/portfolio-min3.jpg')} />
+              <img title="" alt="" src={require('../../img/sample/portfolio-min3.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
             <a href="img/sample/portfolio-big4.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('./img/sample/portfolio-min4.jpg')} />
+              <img title="" alt="" src={require('../../img/sample/portfolio-min4.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
             <a href="img/sample/portfolio-big12.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('./img/sample/portfolio-min12.jpg')} />
+              <img title="" alt="" src={require('../../img/sample/portfolio-min12.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
@@ -85,3 +95,11 @@ export default class Project extends Component {
     );
   }
 };
+
+const mapStateToProps = function(store) {
+  return {
+    projectState: store.projectState
+  };
+};
+
+export default connect(mapStateToProps)(Project);

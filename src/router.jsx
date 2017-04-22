@@ -3,67 +3,19 @@ import { Route, Router, IndexRoute, browserHistory } from 'react-router'
 
 import './css/style.scss';
 
-import Resume from './Resume';
-import Portfolio from './Portfolio';
-import Project from './Project';
-import About from './About';
-import Contact from './Contact';
+import Main from './components/layouts/Main';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Resume from './components/containers/Resume';
+import Portfolio from './components/containers/Portfolio';
+import Project from './components/containers/Project';
+import About from './components/containers/About';
+import Contact from './components/containers/Contact';
 
-const menuItems = {
-  main: {
-    link: "/",
-    label: "Resume"
-  },
-  pages: [
-    {
-      link: "/portfolio",
-      label: "Portfolio"
-    },
-    {
-      link: "/about",
-      label: "About me"
-    },
-    {
-      link: "/contact",
-      label: "Contact"
-    }
-  ]
-};
 
 class NotFound extends Component{
     render(){
         return <h2>Ресурс не найден</h2>;
     }
-}
-
-class Main extends React.Component{
-  render(){
-    return (
-      <div id="page-shadow">
-        <div id="page">
-          <div className="content-innertube">
-            <Header menuItems={menuItems} />
-            {this.props.children}         
-          </div>
-          <div className="clear"></div>
-          <Footer menuItems={menuItems} />
-        </div>
-      </div>
-    );
-  }
-}
-
-class PortfolioMain extends React.Component{
-  render(){
-    return (
-      <div>
-        {this.props.children}         
-      </div>
-    );
-  }
 }
 
 export default (
@@ -72,9 +24,9 @@ export default (
 
       <IndexRoute component={Resume} />
 
-      <Route path="portfolio" component={PortfolioMain}>
+      <Route path="portfolio">
         <IndexRoute component={Portfolio} />
-        <Route path=":name" component={Project} />
+        <Route path=":id" component={Project} />
       </Route>
 
       <Route path="about" component={About} />

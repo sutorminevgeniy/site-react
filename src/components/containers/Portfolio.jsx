@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Router, Link, IndexLink } from 'react-router';
-import store from './store';
+import store from '../../store';
 
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      page: 1,
-      countProjects: 10,
-      tag: 'All',
-      portfolio: props.portfolioState.portfolio
-    };
 
     this.nextPage = this.nextPage.bind(this);
     this.prevPage = this.prevPage.bind(this);
@@ -59,7 +53,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('./img/portfolio.png')} alt="" title="" /></div>
+        <div id="text"><img src={require('../../img/portfolio.png')} alt="" title="" /></div>
         <div id="stripe"></div>
         
         <ul className="portfolio-nav clearfix">
@@ -68,10 +62,12 @@ class Portfolio extends Component {
         
         <ul id="list" className="portfolio clearfix">
           { this.props.portfolioState.portfolio.map((item, key) => {
+            let srcImg = `../.${item.image.src}`;
+            srcImg = require('../../img/sample/portfolio-min1.jpg');
             return (
               <li key={key} data-id={item.dataId} className="ford">
                 <Link to={`/portfolio/${item.dataId}`} rel="prettyPhoto[mixed]" title={item.dataId}>
-                  <img title="" alt="" src={require('' + item.image.src)} />
+                  <img title="" alt="" src={srcImg} />
                   <span className="portfolio-overlay"><br />{item.dataId}<br />{item.tag}</span>
                 </Link>
               </li>

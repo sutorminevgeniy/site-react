@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import imgload from '../../api/imgload';
 import store from '../../store';
 
 
@@ -14,7 +16,7 @@ class Project extends Component {
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('../../img/project.png')} alt="" title="" /></div>
+        <div id="text"><img src={imgload('./project.png')} alt="" title="" /></div>
         <div id="stripe"></div>
         
         <h2>{this.props.projectState.tag} {this.props.projectState.id}</h2>
@@ -29,32 +31,32 @@ class Project extends Component {
         <ul id="project-gall" className="clearfix">
         
           <li>
-            <a href="img/sample/portfolio-big1.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('../../img/sample/portfolio-min1.jpg')} />
+            <a href={imgload('./sample/portfolio-big1.jpg')} rel="prettyPhoto[mixed]" title="Enlarge image">
+              <img title="" alt="" src={imgload('./sample/portfolio-min1.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
-            <a href="img/sample/portfolio-big2.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('../../img/sample/portfolio-min2.jpg')} />
+            <a href={imgload('./sample/portfolio-big2.jpg')} rel="prettyPhoto[mixed]" title="Enlarge image">
+              <img title="" alt="" src={imgload('./sample/portfolio-min2.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
-            <a href="img/sample/portfolio-big3.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('../../img/sample/portfolio-min3.jpg')} />
+            <a href={imgload('./sample/portfolio-big3.jpg')} rel="prettyPhoto[mixed]" title="Enlarge image">
+              <img title="" alt="" src={imgload('./sample/portfolio-min3.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
-            <a href="img/sample/portfolio-big4.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('../../img/sample/portfolio-min4.jpg')} />
+            <a href={imgload('./sample/portfolio-big4.jpg')} rel="prettyPhoto[mixed]" title="Enlarge image">
+              <img title="" alt="" src={imgload('./sample/portfolio-min4.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>
           <li>
-            <a href="img/sample/portfolio-big12.jpg" rel="prettyPhoto[mixed]" title="Enlarge image">
-              <img title="" alt="" src={require('../../img/sample/portfolio-min12.jpg')} />
+            <a href={imgload('./sample/portfolio-big12.jpg')} rel="prettyPhoto[mixed]" title="Enlarge image">
+              <img title="" alt="" src={imgload('./sample/portfolio-min12.jpg')} />
               <span className="portfolio-overlay"></span>
             </a>
           </li>

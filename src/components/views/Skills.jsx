@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import imgload from '../../api/imgload';
+
 class Stars extends Component {
   render() {
     let i;
@@ -7,9 +9,9 @@ class Stars extends Component {
     
     for(i = 0; i < 6; i++){
       if(i < this.props.stars) {
-        imgSrc.push(require('../../img/star-active.png'))
+        imgSrc.push(imgload('./star-active.png'))
       } else {
-        imgSrc.push(require('../../img/star-inactive.png'))
+        imgSrc.push(imgload('./star-inactive.png'))
       }
     }
 

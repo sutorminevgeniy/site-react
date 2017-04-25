@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
+import imgload from '../../api/imgload';
+
 class About extends Component {
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('../../img/aboutme.png')} alt="" title="" /></div>
+        <div id="text"><img src={imgload('./aboutme.png')} alt="" title="" /></div>
         <div id="stripe"></div>
         
         <div id="about" className="clearfix">
-          <img src={require('../../img/sample/photo.jpg')} alt="" title="" />
+          <img src={imgload('./sample/photo.jpg')} alt="" title="" />
           <h2>A few words about me</h2>
           <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in nisl elit, id fermentum ipsum. Nullam nibh sem, facilisis cursus malesuada non, condimentum sed mauris. Aenean consequat, nunc eget molestie convallis, neque est rhoncus ligula, volutpat varius purus nisl non diam. Phasellus enim arcu, pretium sed tincidunt tempor, consequat a lorem. Vestibulum ligula nulla, blandit a ullamcorper in, scelerisque ullamcorper justo.</p>
           

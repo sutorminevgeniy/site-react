@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 
+import imgload from '../../api/imgload';
+
 export default class Contact extends Component {
   render() {
     return (
       <div id="contet-pages">
-        <div id="text"><img src={require('../../img/contact.png')} alt="" title="" /></div>
+        <div id="text"><img src={imgload('./contact.png')} alt="" title="" /></div>
         <div id="stripe"></div>
       
         <ul id="contact-columns" className="clearfix">
         
           <li>
-            <img src={require('../../img/phone-icon.png')} alt="" title="" />
+            <img src={imgload('./phone-icon.png')} alt="" title="" />
             <p>000 123 456 789</p>
           </li>
           
           <li>
-            <img src={require('../../img/mail-icon.png')} alt="" title="" />
+            <img src={imgload('./mail-icon.png')} alt="" title="" />
             <p><a href="mailto:#">address@email.com</a></p>
           </li>
           
           <li className="address">
-            <img src={require('../../img/address-icon.png')} alt="" title="" />
+            <img src={imgload('./address-icon.png')} alt="" title="" />
             <p>
               123 Street Address,
               <br />
@@ -76,7 +78,7 @@ export default class Contact extends Component {
               </ul>
                   
               <div id="submit-btn"><input type="submit" name="button" id="button" className="submit" value="Submit" /></div>
-              <div id="contact-loading"><img src={require('../../img/loading.gif')} width="31" height="31" alt="loading" /></div>
+              <div id="contact-loading"><img src={imgload('./loading.gif')} width="31" height="31" alt="loading" /></div>
                   
             </div>
                 

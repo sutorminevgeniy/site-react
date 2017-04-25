@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import imgload from '../../api/imgload';
+
 import Menu from './Menu';
 
 class ButtonTop extends Component {
@@ -46,10 +48,10 @@ class Footer extends Component {
           <div id="footer-social">
             <h5>Social</h5>
             <ul>
-              <li><a href="#" title=""><img src={require('../../img/twitter.png')} alt="twitter" title="My Twitter profile" /></a></li>
-              <li><a href="#" title=""><img src={require('../../img/facebook.png')} alt="facebook" title="My Facebook profile" /></a></li>
-              <li><a href="#" title=""><img src={require('../../img/flickr.png')} alt="flickr" title="My Flickr profile" /></a></li>
-              <li><a href="#" title=""><img src={require('../../img/linkedin.png')} alt="linkedin" title="My Linkedin profile" /></a></li>
+              <li><a href="#" title=""><img src={imgload('./twitter.png')} alt="twitter" title="My Twitter profile" /></a></li>
+              <li><a href="#" title=""><img src={imgload('./facebook.png')} alt="facebook" title="My Facebook profile" /></a></li>
+              <li><a href="#" title=""><img src={imgload('./flickr.png')} alt="flickr" title="My Flickr profile" /></a></li>
+              <li><a href="#" title=""><img src={imgload('./linkedin.png')} alt="linkedin" title="My Linkedin profile" /></a></li>
             </ul>
           </div>
           

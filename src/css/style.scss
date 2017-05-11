@@ -562,10 +562,6 @@ span.portfolio-overlay {
   background-position: 0 -42px;;
 }
 
-.portfolio li:hover .info .play a {
-  background:  url(../img/play-ico.png) no-repeat 0 0;
-  margin: 0 0 0 52px;
-}
 
 .portfolio li:hover .info .play a:hover {
   background-position: 0 -42px;
@@ -973,35 +969,94 @@ h1.mail-sent {
   /* ------------------------------------------------------------------------
   This you can edit.
 ------------------------------------------------------------------------- */
-  
-  div.light_square .pp_left ,
-  div.light_square .pp_middle,
-  div.light_square .pp_right,
-  div.light_square .pp_content { background: #fff; }
-  
-  div.light_square .pp_content .ppt { color: #000; }
-  div.light_square .pp_expand { background: url(../img/prettyPhoto/light_square/sprite.png) -31px -31px no-repeat; cursor: pointer; } /* Expand button */
-  div.light_square .pp_expand:hover { background: url(../img/prettyPhoto/light_square/sprite.png)  -31px -62px no-repeat; cursor: pointer; } /* Expand button hover */
-  div.light_square .pp_contract { background: url(../img/prettyPhoto/light_square/sprite.png) 0 -31px no-repeat; cursor: pointer; } /* Contract button */
-  div.light_square .pp_contract:hover { background: url(../img/prettyPhoto/light_square/sprite.png) 0 -62px no-repeat; cursor: pointer; } /* Contract button hover */
-  div.light_square .pp_close { width: 75px; height: 30px; background: url(../img/prettyPhoto/light_square/sprite.png) 0 0 no-repeat; cursor: pointer; } /* Close button */
-  div.light_square .pp_details { position: relative; }
-  div.light_square .pp_description { margin-right: 85px; }
-  div.light_square #pp_full_res .pp_inline { color: #000; }
-  div.light_square .pp_gallery a.pp_arrow_previous,
-  div.light_square .pp_gallery a.pp_arrow_next { margin-top: 10px !important; }
-  div.light_square .pp_nav .pp_play { background: url(../img/prettyPhoto/light_square/sprite.png)0 -135px no-repeat; height: 20px; width: 20px; }
-  div.light_square .pp_nav .pp_pause { background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -135px no-repeat; height: 20px; width: 20px; }
-  
-  div.light_square .pp_arrow_previous { background: url(../img/prettyPhoto/light_square/sprite.png) 0 -93px no-repeat; } /* The previous arrow in the bottom nav */
-    div.light_square .pp_arrow_previous.disabled { background-position:  0 -114px; cursor: default; }
-  div.light_square .pp_arrow_next { background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -93px no-repeat; } /* The next arrow in the bottom nav */
-    div.light_square .pp_arrow_next.disabled { background-position: -21px -114px; cursor: default; }
-  
-  div.light_square .pp_next:hover { background: url(../img/prettyPhoto/light_square/btnNext.png) center right  no-repeat; cursor: pointer; } /* Next button */
-  div.light_square .pp_previous:hover { background: url(../img/prettyPhoto/light_square/btnPrevious.png) center left no-repeat; cursor: pointer; } /* Previous button */
-  
-  div.light_square .pp_loaderIcon { background: url(../img/prettyPhoto/light_square/loader.gif) center center no-repeat; } /* Loader icon */
+.light_box {
+  position: fixed;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  div.light_square {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+
+    .pp_left, .pp_middle, .pp_right, .pp_content { 
+      background: #fff; 
+    }
+    
+    .pp_content .ppt { 
+      color: #000; 
+    }
+    .pp_expand { 
+      background: url(../img/prettyPhoto/light_square/sprite.png) -31px -31px no-repeat; 
+      cursor: pointer; 
+    }
+    .pp_expand:hover { 
+      background: url(../img/prettyPhoto/light_square/sprite.png)  -31px -62px no-repeat; 
+      cursor: pointer;
+    }
+    .pp_contract { 
+      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -31px no-repeat; 
+      cursor: pointer; 
+    } 
+    .pp_contract:hover { 
+      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -62px no-repeat; 
+      cursor: pointer; 
+    } 
+    .pp_close { 
+      width: 75px; height: 30px; 
+      background: url(../img/prettyPhoto/light_square/sprite.png) 0 0 no-repeat; 
+      cursor: pointer; } 
+    .pp_details { 
+      position: relative; 
+    }
+    .pp_description { 
+      margin-right: 85px; 
+    }
+    #pp_full_res .pp_inline { 
+      color: #000; 
+    }
+    .pp_gallery a.pp_arrow_previous, 
+    .pp_gallery a.pp_arrow_next { 
+      margin-top: 10px !important; 
+    }
+    .pp_nav .pp_play { 
+      background: url(../img/prettyPhoto/light_square/sprite.png)0 -135px no-repeat; 
+      height: 20px; width: 20px; 
+    }
+    .pp_nav .pp_pause { 
+      background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -135px no-repeat; 
+      height: 20px; width: 20px; 
+    }
+    
+    .pp_arrow_previous { 
+      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -93px no-repeat; 
+    } 
+    .pp_arrow_previous.disabled { 
+      background-position:  0 -114px; cursor: default; 
+    }
+    .pp_arrow_next { 
+      background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -93px no-repeat; 
+    }
+    .pp_arrow_next.disabled { 
+      background-position: -21px -114px; cursor: default; 
+    }
+    
+    .pp_next:hover { 
+      background: url(../img/prettyPhoto/light_square/btnNext.png) center right  no-repeat; 
+      cursor: pointer; 
+    }
+    .pp_previous:hover { 
+      background: url(../img/prettyPhoto/light_square/btnPrevious.png) center left no-repeat; 
+      cursor: pointer; 
+    }
+    
+    .pp_loaderIcon { 
+      background: url(../img/prettyPhoto/light_square/loader.gif) center center no-repeat; 
+    } 
+  }  
+}  
+
 
 /* ------------------------------------------------------------------------
   DO NOT CHANGE

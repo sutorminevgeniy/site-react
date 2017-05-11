@@ -8,7 +8,7 @@ class Lightbox extends Component {
   render() {
     return (
       <div className="light_box">
-        <div className="pp_pic_holder light_square" style={{top: "598px", left: "380px", display: "block", width: "540px"}}>
+        <div className="pp_pic_holder light_square" style={{width: "540px"}}>
           <div className="ppt" style={{opacity: 1, display: "block", width: "500px"}}>&nbsp;</div>
           <div className="pp_top">
             <div className="pp_left"></div>

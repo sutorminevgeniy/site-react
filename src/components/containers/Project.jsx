@@ -7,61 +7,44 @@ import store from '../../store';
 class Lightbox extends Component {
   render() {
     return (
-      <div className="light_box">
-        <div className="pp_pic_holder light_square" style={{width: "540px"}}>
-          <div className="ppt" style={{opacity: 1, display: "block", width: "500px"}}>&nbsp;</div>
-          <div className="pp_top">
-            <div className="pp_left"></div>
-            <div className="pp_middle"></div>
-            <div className="pp_right"></div>
-          </div>
-          <div className="pp_content_container">
-            <div className="pp_left">
-              <div className="pp_right">
-                <div className="pp_content" style={{height: "338px", width: "500px"}}>
-                  <div className="pp_loaderIcon" style={{display: "none"}}></div>
-                  <div className="pp_fade" style={{display: "block"}}>
-                    <a href="#" className="pp_expand" title="Expand the image" style={{display: "none"}}>Expand</a>
-                    <div className="pp_hoverContainer" style={{height: "300px", width: "500px"}}>
-                      <a className="pp_next" href="#">next</a>
-                      <a className="pp_previous" href="#">previous</a>
-                    </div>
-                    <div id="pp_full_res">
-                      <img id="fullResImage" src={imgload('./sample/portfolio-big1.jpg')} style={{height: "300px", width: "500px"}} />
-                    </div>
-                    <div className="pp_gallery" style={{marginLeft: "-142.5px", display: "none"}}>
-                      <a href="#" className="pp_arrow_previous" style={{display: "none"}}>Previous</a>
-                      <div style={{width: "290px"}}>
-                        <ul style={{width: "285px", left: "0px"}}>
-                          <li className="selected"><a href="#"><img src={imgload('./sample/portfolio-big1.jpg')} width="50" alt="" /></a></li>
-                          <li className=""><a href="#"><img src={imgload('./sample/portfolio-big2.jpg')} width="50" alt="" /></a></li>
-                          <li className=""><a href="#"><img src={imgload('./sample/portfolio-big3.jpg')} width="50" alt="" /></a></li>
-                          <li className=""><a href="#"><img src={imgload('./sample/portfolio-big4.jpg')} width="50" alt="" /></a></li>
-                          <li className=""><a href="#"><img src={imgload('./sample/portfolio-big12.jpg')} width="50" alt="" /></a></li>
-                        </ul>
-                      </div>
-                      <a href="#" className="pp_arrow_next" style={{display: "none"}}>Next</a>
-                    </div>
-                    <div className="pp_details" style={{width: "500px"}}>
-                      <div className="pp_nav">
-                        <a href="#" className="pp_arrow_previous">Previous</a>
-                        <p className="currentTextHolder">1/5</p>
-                        <a href="#" className="pp_arrow_next">Next</a>
-                      </div>
-                      <a className="pp_close" href="#">Close</a>
-                    </div>
-                  </div>
+      <div className="light_box"style={{display: "block"}}>
+        <div className="pp_pic_holder light_square" style={{height: "340px", width: "500px"}}>
+          <div className="pp_content">
+            <div className="pp_loaderIcon" style={{display: "none"}}></div>
+            <div className="pp_fade" style={{display: "block"}}>
+              <a href="#" className="pp_expand" title="Expand the image" style={{display: "none"}}>Expand</a>
+              <div className="pp_hoverContainer" style={{height: "300px", width: "500px"}}>
+                <a className="pp_next" href="#">next</a>
+                <a className="pp_previous" href="#">previous</a>
+              </div>
+              <div id="pp_full_res">
+                <img id="fullResImage" src={imgload('./sample/portfolio-big1.jpg')} style={{height: "300px", width: "500px"}} />
+              </div>
+              <div className="pp_gallery" style={{marginLeft: "-142.5px", display: "none"}}>
+                <a href="#" className="pp_arrow_previous" style={{display: "none"}}>Previous</a>
+                <div style={{width: "290px"}}>
+                  <ul style={{width: "285px", left: "0px"}}>
+                    <li className="selected"><a href="#"><img src={imgload('./sample/portfolio-big1.jpg')} width="50" alt="" /></a></li>
+                    <li className=""><a href="#"><img src={imgload('./sample/portfolio-big2.jpg')} width="50" alt="" /></a></li>
+                    <li className=""><a href="#"><img src={imgload('./sample/portfolio-big3.jpg')} width="50" alt="" /></a></li>
+                    <li className=""><a href="#"><img src={imgload('./sample/portfolio-big4.jpg')} width="50" alt="" /></a></li>
+                    <li className=""><a href="#"><img src={imgload('./sample/portfolio-big12.jpg')} width="50" alt="" /></a></li>
+                  </ul>
                 </div>
+                <a href="#" className="pp_arrow_next" style={{display: "none"}}>Next</a>
+              </div>
+              <div className="pp_details" style={{width: "500px"}}>
+                <div className="pp_nav">
+                  <a href="#" className="pp_arrow_previous">Previous</a>
+                  <p className="currentTextHolder">1/5</p>
+                  <a href="#" className="pp_arrow_next">Next</a>
+                </div>
+                <a className="pp_close" href="#">Close</a>
               </div>
             </div>
           </div>
-          <div className="pp_bottom">
-            <div className="pp_left"></div>
-            <div className="pp_middle"></div>
-            <div className="pp_right"></div>
-          </div>
         </div>
-        <div className="pp_overlay" style={{opacity: 0.8, height: "1292px", width: "1300px", display: "block"}}></div>
+        <div className="pp_overlay"></div>
       </div>
     );
   }

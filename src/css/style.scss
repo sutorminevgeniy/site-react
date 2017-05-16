@@ -974,87 +974,80 @@ h1.mail-sent {
   top: 0; bottom: 0;
   left: 0; right: 0;
 
-  div.light_square {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    margin: auto;
-
-    .pp_left, .pp_middle, .pp_right, .pp_content { 
-      background: #fff; 
-    }
-    
-    .pp_content .ppt { 
-      color: #000; 
-    }
-    .pp_expand { 
-      background: url(../img/prettyPhoto/light_square/sprite.png) -31px -31px no-repeat; 
-      cursor: pointer; 
-    }
-    .pp_expand:hover { 
-      background: url(../img/prettyPhoto/light_square/sprite.png)  -31px -62px no-repeat; 
-      cursor: pointer;
-    }
-    .pp_contract { 
-      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -31px no-repeat; 
-      cursor: pointer; 
-    } 
-    .pp_contract:hover { 
-      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -62px no-repeat; 
-      cursor: pointer; 
-    } 
-    .pp_close { 
-      width: 75px; height: 30px; 
-      background: url(../img/prettyPhoto/light_square/sprite.png) 0 0 no-repeat; 
-      cursor: pointer; } 
-    .pp_details { 
-      position: relative; 
-    }
-    .pp_description { 
-      margin-right: 85px; 
-    }
-    #pp_full_res .pp_inline { 
-      color: #000; 
-    }
-    .pp_gallery a.pp_arrow_previous, 
-    .pp_gallery a.pp_arrow_next { 
-      margin-top: 10px !important; 
-    }
-    .pp_nav .pp_play { 
-      background: url(../img/prettyPhoto/light_square/sprite.png)0 -135px no-repeat; 
-      height: 20px; width: 20px; 
-    }
-    .pp_nav .pp_pause { 
-      background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -135px no-repeat; 
-      height: 20px; width: 20px; 
-    }
-    
-    .pp_arrow_previous { 
-      background: url(../img/prettyPhoto/light_square/sprite.png) 0 -93px no-repeat; 
-    } 
-    .pp_arrow_previous.disabled { 
-      background-position:  0 -114px; cursor: default; 
-    }
-    .pp_arrow_next { 
-      background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -93px no-repeat; 
-    }
-    .pp_arrow_next.disabled { 
-      background-position: -21px -114px; cursor: default; 
-    }
-    
-    .pp_next:hover { 
-      background: url(../img/prettyPhoto/light_square/btnNext.png) center right  no-repeat; 
-      cursor: pointer; 
-    }
-    .pp_previous:hover { 
-      background: url(../img/prettyPhoto/light_square/btnPrevious.png) center left no-repeat; 
-      cursor: pointer; 
-    }
-    
-    .pp_loaderIcon { 
-      background: url(../img/prettyPhoto/light_square/loader.gif) center center no-repeat; 
-    } 
-  }  
+  .light_square {
+    border: 20px solid #fff;
+    background: #fff; 
+  }
+  .pp_content .ppt { 
+    color: #000; 
+  }
+  .pp_expand { 
+    background: url(../img/prettyPhoto/light_square/sprite.png) -31px -31px no-repeat; 
+    cursor: pointer; 
+  }
+  .pp_expand:hover { 
+    background: url(../img/prettyPhoto/light_square/sprite.png)  -31px -62px no-repeat; 
+    cursor: pointer;
+  }
+  .pp_contract { 
+    background: url(../img/prettyPhoto/light_square/sprite.png) 0 -31px no-repeat; 
+    cursor: pointer; 
+  } 
+  .pp_contract:hover { 
+    background: url(../img/prettyPhoto/light_square/sprite.png) 0 -62px no-repeat; 
+    cursor: pointer; 
+  } 
+  .pp_close { 
+    width: 75px; height: 30px; 
+    background: url(../img/prettyPhoto/light_square/sprite.png) 0 0 no-repeat; 
+    cursor: pointer; } 
+  .pp_details { 
+    position: relative; 
+  }
+  .pp_description { 
+    margin-right: 85px; 
+  }
+  #pp_full_res .pp_inline { 
+    color: #000; 
+  }
+  .pp_gallery a.pp_arrow_previous, 
+  .pp_gallery a.pp_arrow_next { 
+    margin-top: 10px !important; 
+  }
+  .pp_nav .pp_play { 
+    background: url(../img/prettyPhoto/light_square/sprite.png)0 -135px no-repeat; 
+    height: 20px; width: 20px; 
+  }
+  .pp_nav .pp_pause { 
+    background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -135px no-repeat; 
+    height: 20px; width: 20px; 
+  }
+  
+  .pp_arrow_previous { 
+    background: url(../img/prettyPhoto/light_square/sprite.png) 0 -93px no-repeat; 
+  } 
+  .pp_arrow_previous.disabled { 
+    background-position:  0 -114px; cursor: default; 
+  }
+  .pp_arrow_next { 
+    background: url(../img/prettyPhoto/light_square/sprite.png)  -21px -93px no-repeat; 
+  }
+  .pp_arrow_next.disabled { 
+    background-position: -21px -114px; cursor: default; 
+  }
+  
+  .pp_next:hover { 
+    background: url(../img/prettyPhoto/light_square/btnNext.png) center right  no-repeat; 
+    cursor: pointer; 
+  }
+  .pp_previous:hover { 
+    background: url(../img/prettyPhoto/light_square/btnPrevious.png) center left no-repeat; 
+    cursor: pointer; 
+  }
+  
+  .pp_loaderIcon { 
+    background: url(../img/prettyPhoto/light_square/loader.gif) center center no-repeat; 
+  } 
 }  
 
 
@@ -1066,52 +1059,21 @@ h1.mail-sent {
 
   div.pp_overlay {
     background: #000;
-    display: none;
-    left: 0;
+    opacity: 0.8;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
     position: absolute;
-    top: 0;
-    width: 100%;
     z-index: 9500;
   }
   
   div.pp_pic_holder {
-    display: none;
     position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
     width: 100px;
     z-index: 10000;
   }
-    
-    .pp_top {
-      height: 20px;
-      position: relative;
-    }
-      * html .pp_top { padding: 0 20px; }
-    
-      .pp_top .pp_left {
-        height: 20px;
-        left: 0;
-        position: absolute;
-        width: 20px;
-      }
-      .pp_top .pp_middle {
-        height: 20px;
-        left: 20px;
-        position: absolute;
-        right: 20px;
-      }
-        * html .pp_top .pp_middle {
-          left: 0;
-          position: static;
-        }
-      
-      .pp_top .pp_right {
-        height: 20px;
-        left: auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 20px;
-      }
     
     .pp_content { height: 40px; min-width: 40px; }
     * html .pp_content { width: 40px; }
@@ -1123,10 +1085,6 @@ h1.mail-sent {
       text-align: left;
       width: 100%;
     }
-    
-      .pp_content_container .pp_left { padding-left: 20px; }
-      .pp_content_container .pp_right { padding-right: 20px; }
-    
       .pp_content_container .pp_details {
         float: left;
         margin: 10px 0 2px 0;

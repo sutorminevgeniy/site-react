@@ -22,8 +22,11 @@ class Project extends Component {
   showLightbox (e) {
     e.preventDefault();
 
+    let currentSlide = Number(e.currentTarget.getAttribute('data-current'));
+
     store.dispatch({
-      type: 'SHOW_LIGHTBOX'
+      type: 'SHOW_LIGHTBOX',
+      currentSlide: currentSlide
     });
   }
 
@@ -37,7 +40,7 @@ class Project extends Component {
         
         <ul id="project-nav">
           <li className="online"><a href="#"></a></li>
-          <li className="portfolio"><a href="portfolio.html"></a></li>
+          <li className="portfolio"><a href="/portfolio"></a></li>
         </ul>
         
         <div className="clear"></div>
@@ -46,7 +49,7 @@ class Project extends Component {
           { this.props.projectState.photos.map((item, index) => {
             return (
               <li key={index}>
-                <a href="" rel="prettyPhoto[mixed]" title={item.title} onClick={this.showLightbox}>
+                <a href="" rel="prettyPhoto[mixed]" title={item.title} data-current={index} onClick={this.showLightbox}>
                   <img title="" alt="" src={imgload(item.src)} />
                   <span className="portfolio-overlay"></span>
                 </a>
@@ -86,7 +89,7 @@ class Project extends Component {
           </div>
         </div>
 
-        <Lightbox />
+        { this.props.projectState.photos.length > 0 ? <Lightbox /> : '' }
       </div>
     );
   }

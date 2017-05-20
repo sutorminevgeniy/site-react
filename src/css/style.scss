@@ -1075,10 +1075,71 @@ h1.mail-sent {
     z-index: 10000;
   }
     
-    .pp_content { height: 40px; min-width: 40px; }
-    * html .pp_content { width: 40px; }
+  .pp_content { height: 40px; min-width: 40px; }
+  * html .pp_content { width: 40px; }
+  
+  .pp_fade {
+    &:hover .pp_gallery {
+      display: block;
+    } 
+    .pp_gallery {
+      display: none;
+      left: 50%;
+      margin-top: -50px;
+      position: absolute;
+      z-index: 10000;
     
-    .pp_fade { display: none; }
+    
+      div {
+        float: left;
+        overflow: hidden;
+      }
+      
+      ul {
+        float: left;
+        height: 35px;
+        margin: 0 0 0 5px;
+        padding: 0;
+        position: relative;
+        white-space: nowrap;
+      }
+      
+      ul a {
+        border: 1px #000 solid;
+        border: 1px rgba(0,0,0,0.5) solid;
+        display: block;
+        float: left;
+        height: 33px;
+        overflow: hidden;
+      }
+      
+      ul a:hover,
+      li.selected a { border-color: #fff; }
+      
+      ul a img { border: 0; }
+      
+      li {
+        display: block;
+        float: left;
+        margin: 0 5px 0 0;
+        padding: 0;
+      }
+      
+      li.default a {
+        background: url(../img/prettyPhoto/light_square/default_thumbnail.gif) 0 0 no-repeat;
+        display: block;
+        height: 33px;
+        width: 50px;
+      }
+      
+      li.default a img { display: none; }
+      
+      .pp_arrow_previous,
+      .pp_arrow_next {
+        margin-top: 7px !important;
+      }
+    }
+  }
     
     .pp_content_container {
       position: relative;
@@ -1130,62 +1191,7 @@ h1.mail-sent {
       z-index: 2000;
     }
     
-    .pp_gallery {
-      display: none;
-      left: 50%;
-      margin-top: -50px;
-      position: absolute;
-      z-index: 10000;
-    }
-    
-      .pp_gallery div {
-        float: left;
-        overflow: hidden;
-      }
       
-      .pp_gallery ul {
-        float: left;
-        height: 35px;
-        margin: 0 0 0 5px;
-        padding: 0;
-        position: relative;
-        white-space: nowrap;
-      }
-      
-      .pp_gallery ul a {
-        border: 1px #000 solid;
-        border: 1px rgba(0,0,0,0.5) solid;
-        display: block;
-        float: left;
-        height: 33px;
-        overflow: hidden;
-      }
-      
-      .pp_gallery ul a:hover,
-      .pp_gallery li.selected a { border-color: #fff; }
-      
-      .pp_gallery ul a img { border: 0; }
-      
-      .pp_gallery li {
-        display: block;
-        float: left;
-        margin: 0 5px 0 0;
-        padding: 0;
-      }
-      
-      .pp_gallery li.default a {
-        background: url(../img/prettyPhoto/light_square/default_thumbnail.gif) 0 0 no-repeat;
-        display: block;
-        height: 33px;
-        width: 50px;
-      }
-      
-      .pp_gallery li.default a img { display: none; }
-      
-      .pp_gallery .pp_arrow_previous,
-      .pp_gallery .pp_arrow_next {
-        margin-top: 7px !important;
-      }
     
     a.pp_next {
       background: url(../img/prettyPhoto/light_square/btnNext.png) 10000px 10000px no-repeat;

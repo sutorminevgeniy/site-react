@@ -1093,6 +1093,8 @@ h1.mail-sent {
       div {
         float: left;
         overflow: hidden;
+        position: relative;
+        width: 290px; height: 35px;
       }
       
       ul {
@@ -1100,7 +1102,7 @@ h1.mail-sent {
         height: 35px;
         margin: 0 0 0 5px;
         padding: 0;
-        position: relative;
+        position: absolute;
         white-space: nowrap;
       }
       

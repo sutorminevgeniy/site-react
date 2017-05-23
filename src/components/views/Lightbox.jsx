@@ -8,10 +8,19 @@ class Lightbox extends Component {
   constructor(props) {
     super(props);
 
+    this.lengthLightbox = this.props.projectState.photos.length;
+
+    this.stepCarusel = 5;
+    this.currentCarusel = Math.ceil((this.props.projectState.lightbox.currentSlide + 1) / this.stepCarusel) - 1;
+    this.countCarusel = Math.ceil(this.lengthLightbox / this.stepCarusel);
+    this.stepPosition = 285;
+
     this.hideLightbox   = this.hideLightbox.bind(this);
     this.nextLightbox   = this.nextLightbox.bind(this);
     this.prevLightbox   = this.prevLightbox.bind(this);
-    this.showLightbox = this.showLightbox.bind(this);
+    this.showLightbox   = this.showLightbox.bind(this);
+    this.nextCarusel   = this.nextCarusel.bind(this);
+    this.prevCarusel   = this.prevCarusel.bind(this);
   }
 
   hideLightbox(e) {
@@ -49,8 +58,33 @@ class Lightbox extends Component {
     });
   }
 
+  nextCarusel(e) {
+    e.preventDefault();
+
+    if(this.currentCarusel === (this.countCarusel - 1)) {
+      this.currentCarusel = 0;
+    } else {
+      this.currentCarusel++;
+    }
+
+    this.refs.caruselBlock.style.left = -1 * this.currentCarusel * this.stepPosition + "px";
+  }
+
+  prevCarusel(e) {
+    e.preventDefault();
+
+    if(this.currentCarusel === 0) {
+      this.currentCarusel = this.countCarusel - 1;
+    } else {
+      this.currentCarusel--;
+    }
+
+    this.refs.caruselBlock.style.left = -1 * this.currentCarusel * this.stepPosition + "px";
+  }
+
   render() {
     let displayLigxtbox = (this.props.projectState.lightbox.showState ? "block" : "none");
+    this.currentCarusel = Math.ceil((this.props.projectState.lightbox.currentSlide + 1) / this.stepCarusel) - 1;
 
     return (
       <div className="light_box" style={{display: displayLigxtbox}}>
@@ -70,9 +104,9 @@ class Lightbox extends Component {
               </div>
 
               <div className="pp_gallery" style={{marginLeft: "-142.5px"}}>
-                <a href="#" className="pp_arrow_previous" style={{display: "none"}}>Previous</a>
-                <div style={{width: "290px"}}>
-                  <ul style={{width: "285px", left: "0px"}}>
+                <a href="#" className="pp_arrow_previous" style={{display: (this.countCarusel > 0 ? "block" : "none")}} onClick={this.prevCarusel}>Previous</a>
+                <div>
+                  <ul style={{width: (this.countCarusel * this.stepPosition + "px"), left: (-1 * this.currentCarusel * this.stepPosition + "px")}} ref="caruselBlock">
                     { this.props.projectState.photos.map((item, index) => {
                       return (
                         <li className={ index === this.props.projectState.lightbox.currentSlide ? 'selected' : '' } key={index}>
@@ -82,13 +116,13 @@ class Lightbox extends Component {
                     }) }
                   </ul>
                 </div>
-                <a href="#" className="pp_arrow_next" style={{display: "none"}}>Next</a>
+                <a href="#" className="pp_arrow_next" style={{display: (this.countCarusel > 0 ? "block" : "none")}} onClick={this.nextCarusel}>Next</a>
               </div>
 
               <div className="pp_details" style={{width: "500px"}}>
                 <div className="pp_nav">
                   <a href="#" className="pp_arrow_previous" onClick={this.prevLightbox}>Previous</a>
-                  <p className="currentTextHolder">{this.props.projectState.lightbox.currentSlide + 1}/{this.props.projectState.photos.length}</p>
+                  <p className="currentTextHolder">{this.props.projectState.lightbox.currentSlide + 1}/{this.lengthLightbox}</p>
                   <a href="#" className="pp_arrow_next" onClick={this.nextLightbox}>Next</a>
                 </div>
 

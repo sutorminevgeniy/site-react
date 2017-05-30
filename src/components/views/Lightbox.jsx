@@ -131,7 +131,7 @@ class Lightbox extends Component {
             </div>
           </div>
         </div>
-        <div className="pp_overlay"></div>
+        <div className="pp_overlay" onClick={this.hideLightbox}></div>
       </div>
     );
   }
